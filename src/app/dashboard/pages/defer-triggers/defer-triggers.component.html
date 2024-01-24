@@ -1,0 +1,83 @@
+<app-title title="Defer Triggers" />
+
+<!-- on interaction -->
+<section>
+    <h1 class="text-xl font-bold">Interacciones</h1>
+    
+    <hr class="mt-2 mb-4">
+
+    @defer (on interaction) {
+        <app-heavy-loaders-fast cssClass="bg-blue-200 h-20">
+            <span class="font-bold">on interaction - Div clicado!</span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100 cursor-pointer">Clica en el div</div>
+    }
+</section>
+
+<!-- on interaction + Botón -->
+<section>
+    <hr class="my-4">
+    @defer (on interaction(btnInteraction)) {
+        <app-heavy-loaders-fast cssClass="bg-blue-300 h-20">
+            <span class="font-bold">on interaction - Botón clicado!</span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">Botón no clicado</div>
+    }
+
+    <button
+        class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white mt-2"
+        #btnInteraction
+    >
+        Clícame!
+    </button>
+</section>
+
+<!-- on hover -->
+<section>
+    <hr class="my-4">
+    @defer (on hover) {
+        <app-heavy-loaders-fast cssClass="bg-red-200 h-20">
+            <span class="font-bold">on hover</span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">Pasar por encima del div</div>
+    }
+</section>
+
+<!-- on hover + idle -->
+<section>
+    <hr class="my-4">
+    @defer (on hover; prefetch on idle) {
+        <app-heavy-loaders-fast cssClass="bg-red-400 h-20">
+            <span class="font-bold">on hover + idle</span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">Pasar por encima del div</div>
+    }
+</section>
+
+<!-- on immediate -->
+<section>
+    <hr class="my-4">
+    @defer (on immediate) {
+        <app-heavy-loaders-fast cssClass="bg-orange-300 h-20">
+            <span class="font-bold">on immediate</span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">No se ve el mensaje</div>
+    }
+</section>
+
+<!-- on timer -->
+<section>
+    <hr class="my-4">
+    @defer (on timer(3000)) {
+        <app-heavy-loaders-fast cssClass="bg-green-500 h-20">
+            <span class="font-bold">on timer</span>
+        </app-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-purple-100">3, 2, 1...</div>
+    }
+</section>

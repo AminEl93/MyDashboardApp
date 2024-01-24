@@ -16,9 +16,9 @@ export const routes: Routes = [
                 loadComponent: () => import('./dashboard/pages/control-flow/control-flow.component')
             },
             {
-                path: 'defer-options',
-                title: 'Defer Options',
-                loadComponent: () => import('./dashboard/pages/defer-options/defer-options.component')
+                path: 'defer-triggers',
+                title: 'Defer Triggers',
+                loadComponent: () => import('./dashboard/pages/defer-triggers/defer-triggers.component')
             },
             {
                 path: 'defer-views',

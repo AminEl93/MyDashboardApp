@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { UsersService } from '@services/users.service';
 
 @Component({
     standalone: true,
-    imports: [],
+    imports: [CommonModule],
     templateUrl: './users.component.html'
 })
 
 export default class UsersComponent {
-
+    public usersService = inject(UsersService);
 }

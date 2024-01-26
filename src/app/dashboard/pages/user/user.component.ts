@@ -32,7 +32,7 @@ export default class UserComponent {
         if (this.user()) {
             return `Usuario : ${this.user()?.first_name} ${this.user()?.last_name}`;
         }    
-        return 'Cargando usuario...';
+        return 'Cargando el usuario...';
     });
 
     /*

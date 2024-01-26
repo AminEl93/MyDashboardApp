@@ -29,12 +29,7 @@ export const routes: Routes = [
                 path: 'user/:id',
                 title: 'User View',
                 loadComponent: () => import('./dashboard/pages/user/user.component')
-            },
-            {
-                path: 'user-list',
-                title: 'User List',
-                loadComponent: () => import('./dashboard/pages/users/users.component')
-            },
+            },            
             {
                 path: 'view-transition-1',
                 title: 'View Transition 1',
@@ -44,6 +39,11 @@ export const routes: Routes = [
                 path: 'view-transition-2',
                 title: 'View Transition 2',
                 loadComponent: () => import('./dashboard/pages/view-transition/view-transition-2/view-transition-2.component')
+            },
+            {
+                path: 'user-list',
+                title: 'User List',
+                loadComponent: () => import('./dashboard/pages/users/users.component')
             },
             {
                 path:'', redirectTo: 'control-flow', pathMatch: 'full'

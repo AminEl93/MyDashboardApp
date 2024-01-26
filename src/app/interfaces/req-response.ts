@@ -6,6 +6,11 @@ export interface UsersResponse {
     data:        User[];
     support:     Support;
 }
+
+export interface UserResponse {
+    data:    User;
+    support: Support;
+}
   
 export interface User {
     id:         number;

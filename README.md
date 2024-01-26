@@ -1,5 +1,5 @@
 # MyDashboardApp
-Esta aplicación consiste un dashboard para aprender las nuevas características que se han introducido en la [versión 17 de Angular](https://blog.angular.io/introducing-angular-v17-4d7033312e4b). Hay un menú con los siguientes temas a tratar:
+Esta aplicación consiste en un dashboard hecho con [Tailwind CSS](https://tailwindcss.com) para aprender las nuevas características que se han introducido en la [versión 17](https://blog.angular.io/introducing-angular-v17-4d7033312e4b) de Angular. Hay un menú con los siguientes temas a tratar:
 
 - **[Change Detection](https://medium.com/ngconf/local-change-detection-in-angular-410d82b38664)**
 - **[Control Flow](https://angular.io/guide/control_flow)**

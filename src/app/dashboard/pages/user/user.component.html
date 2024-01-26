@@ -1,4 +1,4 @@
-<app-title title="Usuario : {{ user()?.first_name }} {{ user()?.last_name }}" />
+<app-title [title]="titleLabel()" />
 
 @if(user()) {
     <section>

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 
@@ -27,6 +27,13 @@ export default class UserComponent {
             switchMap( ({ id }) => this._usersService.getUserById(id) )
         )
     )
+
+    public titleLabel = computed(() => {
+        if (this.user()) {
+            return `Usuario : ${this.user()?.first_name} ${this.user()?.last_name}`;
+        }    
+        return 'Cargando usuario...';
+    });
 
     /*
     constructor() {

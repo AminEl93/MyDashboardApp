@@ -1,9 +1,12 @@
-import { Injectable, signal } from '@angular/core';
-import { User } from '@interfaces/req-response';
+import { Injectable, computed, inject, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
-interface State {
-    users: User[];
+import { User, UsersResponse } from '@interfaces/req-response';
+import { delay } from 'rxjs';
+
+interface State {    
     loading: boolean;
+    users: User[];
 }
 
 @Injectable({
@@ -12,12 +15,24 @@ interface State {
 
 export class UsersService {
     
+    private _http = inject(HttpClient);
+
     #state = signal<State>({
-        users: [],
-        loading: true
+        loading: true,
+        users: []        
     });
 
+    public loading = computed(() => this.#state().loading);
+    public users = computed(() => this.#state().users);
+
     constructor() {
-        console.log('Carga de los usuarios');
+        this._http.get<UsersResponse>('https://reqres.in/api/users')
+            .pipe(delay(2000))
+            .subscribe(res => {
+                this.#state.set({
+                    loading: false,
+                    users: res.data
+                });
+            })
     }    
 }
